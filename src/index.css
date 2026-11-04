@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-ink: #141414;
+  --color-accent: #1F514C;
+  --color-accent-hover: #153B37;
+  --color-accent-light: #EDFFE3;
+  --color-muted: #636363;
+  --color-border: #E5E5E5;
+
+  --font-serif: 'Hedvig Letters Serif', 'Newsreader', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', Consolas, monospace;
+
+  --spacing-container-max: 1280px;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-entrance {
+    animation: heroFadeIn 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
